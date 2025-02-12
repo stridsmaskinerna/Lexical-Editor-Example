@@ -11,7 +11,7 @@ import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
-  DEPRECATED_$isGridSelection,
+  // DEPRECATED_$isGridSelection,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
@@ -131,8 +131,8 @@ function BlockFormatDropDown({
     editor.update(() => {
       const selection = $getSelection();
       if (
-        $isRangeSelection(selection) ||
-        DEPRECATED_$isGridSelection(selection)
+        $isRangeSelection(selection)
+        // DEPRECATED_$isGridSelection(selection)
       ) {
         $setBlocksType(selection, () => $createParagraphNode());
       }
@@ -144,8 +144,8 @@ function BlockFormatDropDown({
       editor.update(() => {
         const selection = $getSelection();
         if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
+          $isRangeSelection(selection)
+          // DEPRECATED_$isGridSelection(selection)
         ) {
           $setBlocksType(selection, () => $createHeadingNode(headingSize));
         }
@@ -182,8 +182,8 @@ function BlockFormatDropDown({
       editor.update(() => {
         const selection = $getSelection();
         if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
+          $isRangeSelection(selection)
+          // DEPRECATED_$isGridSelection(selection)
         ) {
           $setBlocksType(selection, () => $createQuoteNode());
         }
@@ -197,8 +197,8 @@ function BlockFormatDropDown({
         let selection = $getSelection();
 
         if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
+          $isRangeSelection(selection)
+          // DEPRECATED_$isGridSelection(selection)
         ) {
           if (selection.isCollapsed()) {
             $setBlocksType(selection, () => $createCodeNode());
